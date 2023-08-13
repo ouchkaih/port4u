@@ -1,8 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import '../assets/css/navbar.css'
+import { useSelector } from "react-redux";
 
 export default function NavBar() {
     const [navbar, setNavbar] = useState(false);
+
+    const [items , setItems] = useState(useSelector((state)=> state.navBar.navItems))
 
     return (
         <nav className="w-full bg-[#0A192F] text-[#5AE5C6] shadow">
@@ -57,18 +60,13 @@ export default function NavBar() {
                         }`}
                     >
                         <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-                            <li className="text-[#5AE5C6] hover:text-[#5AE5C6]">
-                                <a href="#">Home</a>
-                            </li>
-                            <li className="text-gray-200 hover:text-[#5AE5C6]">
-                                <a href="#">About Me</a>
-                            </li>
-                            <li className="text-gray-200 hover:text-[#5AE5C6]">
-                                <a href="#">Project</a>
-                            </li>
-                            <li className="text-gray-200 hover:text-[#5AE5C6]">
-                                <a href="#">Education</a>
-                            </li>
+                            {
+                                items?.map(item=>(
+                                    <li className={`${ item.active ? 'text-[#5AE5C6]' : 'text-gray-200'} hover:text-[#5AE5C6]`}>
+                                        <a href="#" className="capitalize">{item.name}</a>
+                                    </li>
+                                ))
+                            }
                             <li className="w-36"   >
                                <div className=""> 
                                     <a class="fancy" href="#">
