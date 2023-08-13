@@ -1,4 +1,5 @@
 import { useState } from "react";
+import '../assets/css/navbar.css'
 
 export default function NavBar() {
     const [navbar, setNavbar] = useState(false);
@@ -66,12 +67,17 @@ export default function NavBar() {
                                 <a href="#">Project</a>
                             </li>
                             <li className="text-gray-200 hover:text-[#5AE5C6]">
-                                <a href="#">Education & Experionce</a>
+                                <a href="#">Education</a>
                             </li>
-                            <li className="px-3 py-2 border border-[#5AE5C6] text-[#5AE5C6] rounded-md hover:text-[#5AE5C6]">
-                                
-
-                            
+                            <li className="w-36"   >
+                               <div className=""> 
+                                    <a class="fancy" href="#">
+                                        <span class="top-key"></span>
+                                        <span class="text">Resum</span>
+                                        <span class="bottom-key-1"></span>
+                                        <span class="bottom-key-2"></span>
+                                    </a>
+                                </div>
                             </li>
                         </ul>
                         

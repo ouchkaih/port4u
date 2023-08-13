@@ -1,8 +1,8 @@
 import NavBar from "./components/NavBar";
-
+import './App.css'
 function App() {
   return (
-    <div className="">
+    <div className="bg-[#0A192F] min-h-screen">
       <NavBar/>
     </div>
   );
