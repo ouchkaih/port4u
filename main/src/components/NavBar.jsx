@@ -1,20 +1,37 @@
 import { useEffect, useState } from "react";
 import '../assets/css/navbar.css'
 import { useSelector } from "react-redux";
+import { DarkModeToggle } from "darkmode-toggle-react"; 
+// import {DarkModeToggle} from 'darkmode-toggle-react'
 
 export default function NavBar() {
     const [navbar, setNavbar] = useState(false);
 
+    const [themeMode , setThemeMode] = useState(localStorage.getItem("theme"));
+    
+    const [theme , setThemeActive ] = useState( localStorage.getItem('theme') ? localStorage.getItem('theme') : 'light');
+
+
     const [items , setItems] = useState(useSelector((state)=> state.navBar.navItems))
 
+
+    // const changeTheme = ()=>{
+    //     console.log('dfka');
+    //     setThemeMode(items==="dark"?'light': 'dark')
+    // }
+
     return (
-        <nav className="w-full bg-[#0A192F] text-[#5AE5C6] shadow">
+        <nav className="w-full dark:bg-[#0A192F] dark:text-[#5AE5C6] text-[#0A192F] shadow">
             <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
-                <div>
+                <div >
                     <div className="flex items-center justify-between py-3 md:py-5 md:block">
                         <a href="#">
                             <h2 className="text-2xl font-bold">LOGO</h2>
                         </a>
+                        <div className="pl-3 md:hidden">
+                            <DarkModeToggle theme={theme} setThemeActive={setThemeActive} />
+                        </div>
+
                         <div className="md:hidden">
                             <button
                                 className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
@@ -53,7 +70,7 @@ export default function NavBar() {
                         </div>
                     </div>
                 </div>
-                <div>
+                <div className="">
                     <div
                         className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
                             navbar ? "block" : "hidden"
@@ -62,23 +79,35 @@ export default function NavBar() {
                         <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
                             {
                                 items?.map(item=>(
-                                    <li className={`${ item.active ? 'text-[#5AE5C6]' : 'text-gray-200'} hover:text-[#5AE5C6]`}>
+                                    <li className={`${ item.active ? 'text-[#33a2aa] dark:text-[#5AE5C6]' : ' text-[#0A192F] dark:text-gray-200 '} hover:text-[#5AE5C6] dark:hover:text-[#5AE5C6] `}>
                                         <a href="#" className="capitalize">{item.name}</a>
                                     </li>
                                 ))
                             }
-                            <li className="w-36"   >
+                             
+                            <li className="block md:hidden"   >
                                <div className=""> 
-                                    <a class="fancy" href="#">
-                                        <span class="top-key"></span>
-                                        <span class="text">Resum</span>
-                                        <span class="bottom-key-1"></span>
-                                        <span class="bottom-key-2"></span>
-                                    </a>
+                                    <button className="bg-[#0A192F] dark:bg-[#5AE5C6]">
+                                        <span class="button_top text-[#0A192F] dark:text-[#5AE5C6] border-2 border-[#0A192F] dark:border-[#5AE5C6] bg-[#FDFAF6] dark:bg-[#0A192F]"> Button
+                                        </span>
+                                    </button>
                                 </div>
-                            </li>
+                            </li>                           
                         </ul>
                         
+                        
+                    </div>
+                    
+                </div>
+                <div className="hidden md:flex items-center">
+                    <div>
+                        <button className="bg-[#0A192F] dark:bg-[#5AE5C6]">
+                            <span class="button_top text-[#0A192F] dark:text-[#5AE5C6] border-2 border-[#0A192F] dark:border-[#5AE5C6] bg-[#FDFAF6] dark:bg-[#0A192F]"> Button
+                            </span>
+                        </button>
+                    </div>
+                    <div className="block pl-3">
+                        <DarkModeToggle theme={theme} setThemeActive={setThemeActive} />
                     </div>
                 </div>
             </div>
