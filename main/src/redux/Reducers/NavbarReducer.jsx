@@ -9,15 +9,15 @@ const initialState = {
             active: true
         },{
             name: 'about me',
-            href: '/',
+            href: '/about-me',
             active: false
         },{
             name: 'projects',
-            href: '/',
+            href: '/projects',
             active: false
         },{
             name: 'education',
-            href: '/',
+            href: '/education',
             active: false
         },
     ]
