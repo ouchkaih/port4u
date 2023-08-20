@@ -26,7 +26,7 @@ export default function NavBar() {
 
     return (
         <nav className="w-full dark:bg-[#0A192F] dark:text-[#5AE5C6] text-[#0A192F] shadow">
-            <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
+            <div className="justify-between px-4 md:items-center md:flex md:px-8">
                 <div >
                     <div className="flex items-center justify-between py-3 md:py-5 md:block">
                         <a href="/">
