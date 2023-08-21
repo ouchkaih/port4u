@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 function SocialMedia() {
 
   return (
-    <div>
+    <div className='hidden md:block'>
         <div className="fixed left-0 px-5 bottom-0 mx-auto lg:max-w-7xl justify-center flex-col items-center">
           <div>
             {

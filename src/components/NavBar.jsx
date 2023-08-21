@@ -25,8 +25,8 @@ export default function NavBar() {
     }
 
     return (
-        <nav className="w-full dark:bg-[#0A192F] dark:text-[#5AE5C6] text-[#0A192F] shadow">
-            <div className="justify-between px-4 md:items-center md:flex md:px-8">
+        <nav className="w-full dark:bg-[#0A192F] dark:text-[#5AE5C6] text-[#0A192F] shadow py-3">
+            <div className="justify-between px-4 md:items-center md:flex md:px-8 ">
                 <div >
                     <div className="flex items-center justify-between py-3 md:py-5 md:block">
                         <a href="/">
@@ -44,7 +44,7 @@ export default function NavBar() {
                                 {navbar ? (
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
-                                        className="w-6 h-6"
+                                        className="w-10 h-10 text-[#0A192F] dark:text-[#5AE5C6]"
                                         viewBox="0 0 20 20"
                                         fill="currentColor"
                                     >
@@ -57,7 +57,7 @@ export default function NavBar() {
                                 ) : (
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
-                                        className="w-6 h-6"
+                                        className="w-10 h-10 text-[#0A192F] dark:text-[#5AE5C6]"
                                         fill="none"
                                         viewBox="0 0 24 24"
                                         stroke="currentColor"
@@ -74,16 +74,16 @@ export default function NavBar() {
                         </div>
                     </div>
                 </div>
-                <div className="">
+                <div className="absolute w-full md:w-full flex justify-center md:block bg-[#FDFAF6] dark:bg-[#0A192F] md:relative left-0">
                     <div
-                        className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
+                        className={`justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 flex ${
                             navbar ? "block" : "hidden"
                         }`}
                     >
-                        <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
+                        <ul className="items-center  justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
                             {
                                 items?.map((item, index)=>(
-                                    <li key={index} className={`${ item.href === pathname ? 'text-[#0A192F] font-bold dark:text-[#5AE5C6]' : ' text-[#0A192F] dark:text-gray-200 opacity-80'} hover:text-[#0A192F] hover:font-bold hover:opacity-100 dark:hover:text-[#5AE5C6] `}>
+                                    <li key={index} className={`${ item.href === pathname ? 'text-[#0A192F] font-bold dark:text-[#5AE5C6]' : ' text-[#0A192F] dark:text-gray-200 opacity-80'} hover:text-[#0A192F] text-center  hover:font-bold hover:opacity-100 dark:hover:text-[#5AE5C6] `}>
                                         <Link to={item.href} onClick={()=> ChangeActiveLink} className="capitalize">{item.name}</Link>
                                     </li>
                                 ))

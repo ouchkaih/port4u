@@ -14,7 +14,7 @@ export default function Home() {
                 </div>
             </div>
         </div>
-        <SocialMedia/>
+        <SocialMedia />
     </div>
   )
 }
