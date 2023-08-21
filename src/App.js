@@ -10,7 +10,7 @@ library.add(fas, faFontAwesome, faTwitter)
 
 function App() {
   return (
-    <div className="bg-[#FDFAF6] dark:bg-[#0A192F] min-h-screen min-w-full">
+    <div className="bg-[#FDFAF6] dark:bg-[#0A192F] min-h-screen min-w-full text-[#0A192F] dark:text-[#CCD6F6]">
       <MainRoutes/>
     </div>
   );

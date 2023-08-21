@@ -25,12 +25,12 @@ export default function NavBar() {
     }
 
     return (
-        <nav className="w-full dark:bg-[#0A192F] dark:text-[#5AE5C6] text-[#0A192F] shadow py-3">
-            <div className="justify-between px-4 md:items-center md:flex md:px-8 ">
+        <nav className="w-full bg-[#FDFAF6] dark:bg-[#0A192F] dark:text-[#5AE5C6] text-[#0A192F] shadow py-3 block relative z-50">
+            <div className="justify-between px-4 md:items-center md:flex md:px-10">
                 <div >
                     <div className="flex items-center justify-between py-3 md:py-5 md:block">
                         <a href="/">
-                            <h2 className="text-2xl font-bold">LOGO</h2>
+                            <h2 className="text-2xl font-bold">Ra!vox</h2>
                         </a>
                         <div className="pl-3 md:hidden">
                             <DarkModeToggle theme={theme} setThemeActive={setThemeActive} />
@@ -83,7 +83,7 @@ export default function NavBar() {
                         <ul className="items-center  justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
                             {
                                 items?.map((item, index)=>(
-                                    <li key={index} className={`${ item.href === pathname ? 'text-[#0A192F] font-bold dark:text-[#5AE5C6]' : ' text-[#0A192F] dark:text-gray-200 opacity-80'} hover:text-[#0A192F] text-center  hover:font-bold hover:opacity-100 dark:hover:text-[#5AE5C6] `}>
+                                    <li key={index} className={`${ item.href === pathname ? 'text-[#0A192F] font-bold dark:text-[#5AE5C6]' : ' text-[#0A192F] dark:text-[#CCD6F6] opacity-80'} hover:text-[#0A192F] text-center  hover:font-bold hover:opacity-100 dark:hover:text-[#5AE5C6] `}>
                                         <Link to={item.href} onClick={()=> ChangeActiveLink} className="capitalize">{item.name}</Link>
                                     </li>
                                 ))
@@ -108,7 +108,7 @@ export default function NavBar() {
                             </span>
                         </button>
                     </div>
-                    <div className="block pl-3">
+                    <div className="block pl-3 dark:text-[#CCD6F6]">
                         <DarkModeToggle theme={theme} setThemeActive={setThemeActive} />
                     </div>
                 </div>

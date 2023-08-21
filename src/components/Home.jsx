@@ -8,7 +8,7 @@ export default function Home() {
         <div className='text-[#0A192F] dark:text-gray-200 px-4 mx-auto 
             justify-between lg:max-w-7xl md:items-center md:px-1
             '>
-            <div className="grid grid-cols-2">
+            <div className="py-3 md:px-16">
                 <div className="">
                     <HeroSection/>
                 </div>

@@ -23,3 +23,8 @@ body{
 .dark body{
   background-color: #0A192F;
 }
+
+
+.sun{
+  fill: #CCD6F6 !important;
+}
