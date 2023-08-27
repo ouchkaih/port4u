@@ -8,11 +8,8 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 export default function NavBar() {
     const [navbar, setNavbar] = useState(false);
     const location = useLocation();
-    const navigate = useNavigate();
-    const { hash, pathname, search } = location;
+    const { pathname} = location;
 
-    const [themeMode , setThemeMode] = useState(localStorage.getItem("theme"));
-    
     const [theme , setThemeActive ] = useState( localStorage.getItem('theme') ? localStorage.getItem('theme') : 'light');
 
 
@@ -25,7 +22,7 @@ export default function NavBar() {
     }
 
     return (
-        <nav className="w-full bg-[#FDFAF6] dark:bg-[#0A192F] dark:text-[#5AE5C6] text-[#0A192F] shadow py-3 block relative z-50">
+        <nav className="w-full bg-[#FDFAF6] dark:bg-[#0A192F] dark:text-[#5AE5C6] text-[#0A192F] py-3 block relative z-50">
             <div className="justify-between px-4 md:items-center md:flex md:px-10">
                 <div >
                     <div className="flex items-center justify-between py-3 md:py-5 md:block">
@@ -80,10 +77,11 @@ export default function NavBar() {
                             navbar ? "block" : "hidden"
                         }`}
                     >
-                        <ul className="items-center  justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
+                        <ul className="items-center text-sm justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
                             {
                                 items?.map((item, index)=>(
-                                    <li key={index} className={`${ item.href === pathname ? 'text-[#0A192F] font-bold dark:text-[#5AE5C6]' : ' text-[#0A192F] dark:text-[#CCD6F6] opacity-80'} hover:text-[#0A192F] text-center  hover:font-bold hover:opacity-100 dark:hover:text-[#5AE5C6] `}>
+                                    <li key={index} className={`${ item.href === pathname ? 'text-[#0A192F] font-bold dark:text-[#5AE5C6]' : ' text-[#0A192F] dark:text-[#CCD6F6] opacity-80 dark:opacity-100'} hover:text-[#0A192F] text-center  hover:font-bold hover:opacity-100 dark:hover:text-[#5AE5C6] `}>
+                                        <span className="text-[#0A192F] font-bold dark:text-[#5AE5C6] mr-2 text-sm">{index+1}.</span>
                                         <Link to={item.href} onClick={()=> ChangeActiveLink} className="capitalize">{item.name}</Link>
                                     </li>
                                 ))
@@ -103,7 +101,7 @@ export default function NavBar() {
                 </div>
                 <div className="hidden md:flex items-center">
                     <div>
-                        <button className="bg-[#0A192F] dark:bg-[#5AE5C6]">
+                        <button className="bg-[#0A192F] dark:bg-[#5AE5C6] navbar_btn">
                             <span className="button_top text-[#0A192F] dark:text-[#5AE5C6] border-2 border-[#0A192F] dark:border-[#5AE5C6] bg-[#FDFAF6] dark:bg-[#0A192F]"> Button
                             </span>
                         </button>

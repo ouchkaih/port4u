@@ -6,20 +6,19 @@ const initialState = {
         {
             name: 'home',
             href: '/',
-            active: true
         },{
-            name: 'about me',
+            name: 'about',
             href: '/about-me',
-            active: false
         },{
             name: 'projects',
             href: '/projects',
-            active: false
         },{
             name: 'education',
             href: '/education',
-            active: false
-        },
+        },{
+            name: 'contact',
+            href: '/contact-me',
+        }
     ]
 }
 export const NavbarReducer = createSlice(

@@ -1,4 +1,4 @@
-button {
+.navbar_btn {
   /* Variables */
   --button_radius: 0.4em;
   --button_color: #e8e8e8;
@@ -18,13 +18,13 @@ button {
   transition: transform 0.1s ease;
 }
 
-button:hover .button_top {
+.navbar_btn:hover .button_top {
   /* Pull the button upwards when hovered */
   transform: translate(-2px, -2px);
 
 }
 
-button:active .button_top {
+.navbar_btn:active .button_top {
   /* Push the button downwards when pressed */
   transform: translateY(0);
 

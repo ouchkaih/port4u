@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTwitter, faXTwitter } from '@fortawesome/free-brands-svg-icons'
 import {socials} from './socials'
 import { Link } from 'react-router-dom';
 
@@ -13,7 +11,7 @@ function SocialMedia() {
           <div>
             {
               socials.map((icon)=>(
-                <Link to={icon.path} className='opacity-70 dark:opacity-100 flex justify-center m-5 mx-0 md:mx-3 dark:text-[#8892b0] dark:hover:text-[#5AE5C6] ' aria-label={icon.name} title={icon.name}>{icon.icon} </Link>
+                <Link to={icon.path} className='opacity-70 dark:opacity-100 flex justify-center m-5 mx-0 md:mx-3 dark:text-[#8892b0] dark:hover:text-[#5AE5C6] hover:text-[#0A192F] hover:opacity-100' aria-label={icon.name} title={icon.name}>{icon.icon} </Link>
               ))
             }
           </div>
@@ -22,8 +20,8 @@ function SocialMedia() {
             <div className="h-[90px] w-[2px] m-0 opacity-70 dark:opacity-100 bg-[#0A192F] dark:bg-[#8892b0] dark:hover:bg-[#5AE5C6]  "></div>
           </div>
         </div>
-        <div className="fixed right-3 px-5 bottom-0 dark:text-[#8892b0] dark:hover:text-[#5AE5C6]">
-          <div className='[writing-mode:vertical-lr] mb-5 font-semibold text-[15px] opacity-70 dark:opacity-100'>
+        <div className="fixed right-3 px-5 bottom-0  dark:text-[#8892b0] dark:hover:text-[#5AE5C6]">
+          <div className='[writing-mode:vertical-lr] mb-5 font-semibold text-[15px] hover:text-[#0A192F] hover:opacity-100 opacity-70 dark:opacity-100'>
             <Link to="mailto:ouchkaihismail@gmail.com">
               Ouchkaihismail@gmail.com
             </Link>
