@@ -4,22 +4,24 @@ import List from './List'
 function Education() {
   let diplomas = [
     {
+        period: 'My Lifetime', 
+        field: 'Life and Existence',
+        school: '​Universe',
+    },
+    {
         period: 'Dec 2022 - Jun 2023', 
         field: 'Full-Stack Development',
         school: 'Specialized Institute Of Applied Technology, Sidi Maarouf, Casablanca Morocco',
-        icon: ''
     },
     {
         period: 'Dec 2021 - Jun 2022', 
         field: 'Web Development',
         school: 'Specialized Institute Of Applied Technology, Sidi Maarouf, Casablanca Morocco',
-        icon: ''
     },
     {
         period: 'Dec 2020 - Jun 2021', 
         field: 'Physical And Chemical Sciences(BAC)',
         school: 'El-jadid high school, TATA Morocco',
-        icon: ''
     },
 
   ]
