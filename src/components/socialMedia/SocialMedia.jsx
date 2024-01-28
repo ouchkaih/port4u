@@ -21,7 +21,7 @@ function SocialMedia() {
           </div>
         </div>
         <div className="fixed right-3 px-5 bottom-0  dark:text-[#8892b0] dark:hover:text-[#5AE5C6]">
-          <div className='[writing-mode:vertical-lr] mb-5 font-semibold text-[15px] hover:text-[#0A192F] hover:opacity-100 opacity-70 dark:opacity-100'>
+          <div className='[writing-mode:vertical-lr] mb-5 font-semibold text-[15px] hover:text-[#0A192F] dark:hover:text-[#5AE5C6] hover:opacity-100 opacity-70 dark:opacity-100'>
             <Link to="mailto:ouchkaihismail@gmail.com">
               Ouchkaihismail@gmail.com
             </Link>

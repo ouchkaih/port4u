@@ -2,6 +2,7 @@ import React from 'react'
 import HeroSection from './heroSection/HeroSection'
 import SocialMedia from './socialMedia/SocialMedia'
 import About from './about/About'
+import Education from './education/Education'
 
 export default function Home() {
   return (
@@ -10,9 +11,10 @@ export default function Home() {
             justify-between lg:max-w-7xl md:items-center md:px-1
             '>
             <div className="md:px-24">
-                <div className="">
+                <div className="space-y-10">
                     <HeroSection/>
                     <About/>
+                    <Education/>
                 </div>
             </div>
         </div>

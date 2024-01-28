@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 function HeroSection() {    
   return (
-    <div className="w-full flex items-center pb-16">
+    <div className="w-full flex items-center">
         <div className='
             justify-between lg:max-w-7xl md:items-center md:flex 
             '>
