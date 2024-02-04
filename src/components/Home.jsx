@@ -3,6 +3,8 @@ import HeroSection from './heroSection/HeroSection'
 import SocialMedia from './socialMedia/SocialMedia'
 import About from './about/About'
 import Education from './education/Education'
+import Projects from './projects/Projects'
+import Footer from './footer/Footer'
 
 export default function Home() {
   return (
@@ -15,6 +17,8 @@ export default function Home() {
                     <HeroSection/>
                     <About/>
                     <Education/>
+                    <Projects/>
+                    <Footer/>
                 </div>
             </div>
         </div>

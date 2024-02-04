@@ -28,16 +28,16 @@ function Education() {
   
   return (
     <div>
-      <div className="grid grid-cols-2 px-1 py-8">
+      <div className="grid grid-cols-2 px-1 py-8">  
         <div className="">
           <h3 className="capitalize text-2xl text-[] mb-3 dark:text-[#CCD6F6] font-semibold"><span className="text-[#0A192F] font-bold dark:text-[#5AE5C6] text-base ">2.</span> Education</h3>
-          <span className=''>
+          <div className=''>
             {
                 diplomas.map((diplom)=>(
                     <List diplom={diplom}/>                
                 ))
             }
-          </span>
+          </div>
         </div>
         <div className="">
           hello

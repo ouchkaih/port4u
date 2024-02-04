@@ -35,3 +35,13 @@
 .container .moon, .container .sun {
   position: relative !important;
 }
+
+
+.dark #Layer_1{
+  fill: #5AE5C6 !important
+}
+
+
+#Layer_1{
+  fill: #5AE5C6 !important
+}
