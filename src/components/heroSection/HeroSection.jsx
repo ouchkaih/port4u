@@ -1,15 +1,35 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import SocialMedia from '../socialMedia/SocialMedia'
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux';
 
 function HeroSection() {    
+
+  const theme = useSelector((state)=> state.theme.theme);
+  const [myBg , setMyBg] = useState(theme)
+
+  useEffect(()=>{
+    setMyBg(theme)
+  },[ theme])
+
+
+
   return (
     <div className="w-full flex items-center">
         <div className='
-            justify-between lg:max-w-7xl md:items-center md:flex 
+            justify-between lg:max-w-7xl md:items-center md:flex w-full
             '>
-            <div className="md:grid md:grid-cols-3 text-center md:text-start">
-                <div className="col-span-2 ">
+            <div className="w-full text-center md:text-start relative">
+                <div className="absolute right-0 bottom-0 ">
+                  {
+                    myBg == 'dark' ? (
+                      <img src="./bg_blue.png" alt="" className='w-full opacity-40 md:opacity-50'/>
+                    ): (
+                      <img src="./bg_gray.png" alt="" className='w-full opacity-40 md:opacity-50'/>
+                    )
+                  }
+                </div>
+                <div className="col-span-2 z-10 relative">
                   <div className=''>
                     <span className='pl-1 dark:text-[#5AE5C6] text-base opacity-80 dark:opacity-100'>
                       ~$ Whoami
@@ -36,7 +56,7 @@ function HeroSection() {
                     </button>
                   </div>
                 </div>
-                <div className="col-span-1"></div>
+                
             </div>
         </div>
     </div>

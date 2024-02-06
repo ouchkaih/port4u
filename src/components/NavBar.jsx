@@ -1,16 +1,24 @@
 import { useEffect, useState } from "react";
 import '../assets/css/navbar.css'
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { DarkModeToggle } from "darkmode-toggle-react"; 
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import BuyMeCoffee from "./icons/BuyMeCoffe";
+import { setTheme } from "../redux/Reducers/ThemeReducer";
 // import {DarkModeToggle} from 'darkmode-toggle-react'
 
 export default function NavBar() {
     const [navbar, setNavbar] = useState(false);
     const location = useLocation();
     const { pathname} = location;
+    const dispatch = useDispatch()
 
     const [theme , setThemeActive ] = useState( localStorage.getItem('theme') ? localStorage.getItem('theme') : 'light');
+
+
+    useEffect(()=>{
+        dispatch(setTheme(theme));
+    }, [theme])
 
 
     const [items , setItems] = useState(useSelector((state)=> state.navBar.navItems))
@@ -90,7 +98,8 @@ export default function NavBar() {
                             <li className="block md:hidden"   >
                                <div className=""> 
                                     <button className="bg-[#0A192F] dark:bg-[#5AE5C6]">
-                                        <span className="button_top text-[#0A192F] dark:text-[#5AE5C6] border-2 border-[#0A192F] dark:border-[#5AE5C6] bg-[#FDFAF6] dark:bg-[#0A192F]"> Button
+                                        <span className="button_top text-[#0A192F] dark:text-[#5AE5C6] border-2 border-[#0A192F] dark:border-[#5AE5C6] bg-[#FDFAF6] dark:bg-[#0A192F] text-sm"> 
+                                            Buy Me Coffee
                                         </span>
                                     </button>
                                 </div>
@@ -102,8 +111,11 @@ export default function NavBar() {
                 <div className="hidden md:flex items-center">
                     <div>
                         <button className="bg-[#0A192F] dark:bg-[#5AE5C6] navbar_btn">
-                            <span className="button_top text-[#0A192F] dark:text-[#5AE5C6] border-2 border-[#0A192F] dark:border-[#5AE5C6] bg-[#FDFAF6] dark:bg-[#0A192F]"> Button
-                            </span>
+                            <Link to="https://www.buymeacoffee.com/raivox" className="button_top text-[#0A192F] dark:text-[#5AE5C6] flex justify-center items-center gap-4 border-2 border-[#0A192F] dark:border-[#5AE5C6] bg-[#FDFAF6] dark:bg-[#0A192F]"> 
+                              <div className="flex justify-center items-center gap-2">
+                                <BuyMeCoffee/>  <span className="text-xs whitespace-nowrap">Buy Me Coffee</span>
+                              </div>
+                            </Link>
                         </button>
                     </div>
                     <div className="block pl-3 dark:text-[#CCD6F6]">
