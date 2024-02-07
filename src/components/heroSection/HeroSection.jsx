@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import SocialMedia from '../socialMedia/SocialMedia'
-import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux';
 
 function HeroSection() {    
@@ -22,7 +20,7 @@ function HeroSection() {
             <div className="w-full text-center md:text-start relative">
                 <div className="absolute right-0 bottom-0">
                   {
-                    myBg == 'dark' ? (
+                    myBg === 'dark' ? (
                       <img src="./bg_blue.png" alt="" className='w-full opacity-30 md:opacity-50'/>
                     ): (
                       <img src="./bg_gray.png" alt="" className='w-full opacity-40 md:opacity-50'/>

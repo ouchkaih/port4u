@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import '../assets/css/navbar.css'
 import { useDispatch, useSelector } from "react-redux";
 import { DarkModeToggle } from "darkmode-toggle-react"; 
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import BuyMeCoffee from "./icons/BuyMeCoffe";
 import { setTheme } from "../redux/Reducers/ThemeReducer";
 // import {DarkModeToggle} from 'darkmode-toggle-react'
@@ -18,10 +18,10 @@ export default function NavBar() {
 
     useEffect(()=>{
         dispatch(setTheme(theme));
-    }, [theme])
+    }, [theme, dispatch])
 
 
-    const [items , setItems] = useState(useSelector((state)=> state.navBar.navItems))
+    const items  = useState(useSelector((state)=> state.navBar.navItems))
 
 
     const ChangeActiveLink = ()=>{
