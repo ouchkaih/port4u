@@ -20,10 +20,10 @@ function HeroSection() {
             justify-between lg:max-w-7xl md:items-center md:flex w-full
             '>
             <div className="w-full text-center md:text-start relative">
-                <div className="absolute right-0 bottom-0 ">
+                <div className="absolute right-0 bottom-0">
                   {
                     myBg == 'dark' ? (
-                      <img src="./bg_blue.png" alt="" className='w-full opacity-40 md:opacity-50'/>
+                      <img src="./bg_blue.png" alt="" className='w-full opacity-30 md:opacity-50'/>
                     ): (
                       <img src="./bg_gray.png" alt="" className='w-full opacity-40 md:opacity-50'/>
                     )
