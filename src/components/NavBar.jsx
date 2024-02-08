@@ -21,7 +21,7 @@ export default function NavBar() {
     }, [theme, dispatch])
 
 
-    const items  = useState(useSelector((state)=> state.navBar.navItems))
+    const [items , setItems] = useState(useSelector((state)=> state.navBar.navItems))
 
 
     const ChangeActiveLink = ()=>{
