@@ -1,0 +1,37 @@
+{
+    "projects": [
+        {
+            "title" : "TypeCliGenius",
+            "path": "https://github.com/ouchkaih/TypeCliGenius",
+            "description": "TypeCliGenius is a lightweight command-line interface (CLI) tool developed in TypeScript This tool provides a straightforward way to perform various calculations and operations directly from the command line.",
+            "skills": [
+                "TypeScript", "Commanderjs", "Figlet"
+            ]
+        },
+        {
+            "title" : "X-O game",
+            "path": "https://github.com/ouchkaih/xo-game",
+            "description": "A sleek and modern implementation of the classic Tic-Tac-Toe (XO) game built with ReactJS. This project showcases the use of React's stateful components to create a responsive and interactive gaming experience.",
+            "skills": [
+                "Reactjs"
+            ]
+        },
+        {
+            "title" : "React-Calculator",
+            "path": "https://github.com/ouchkaih/React-Calculator",
+            "description": "A simple react js Calculator application, where you can do different operations such as multiplication, subtraction, additional and division. this calculator easy and helpful.",
+            "skills": [
+                "Reactjs", "css"
+            ]
+        }
+        ,{
+            "title" : "Darkmode-toggle-react",
+            "path": "https://github.com/ouchkaih/Darkmode-toggle-react",
+            "description": "A customizable and easy-to-integrate React component for implementing a dark mode toggle switch using Tailwind CSS.",
+            "skills": [
+                "Javascript", "StoryBook"
+            ]
+        }
+    ]
+  }
+  
