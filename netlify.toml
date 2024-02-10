@@ -1,0 +1,4 @@
+[build]
+
+  # Directory to change to before starting build commands and to publish as deploy output
+  publish = "C:/Users/raivox/Desktop/projects/port4u/build"

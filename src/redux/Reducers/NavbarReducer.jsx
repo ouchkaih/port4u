@@ -10,9 +10,6 @@ const initialState = {
             name: 'about',
             href: '/about-me',
         },{
-            name: 'education',
-            href: '/education',
-        },{
             name: 'projects',
             href: '/projects',
         }

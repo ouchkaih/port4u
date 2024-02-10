@@ -2,7 +2,6 @@ import React from 'react'
 import HeroSection from './heroSection/HeroSection'
 import SocialMedia from './socialMedia/SocialMedia'
 import About from './about/About'
-import Education from './education/Education'
 import Projects from './projects/Projects'
 import Footer from './footer/Footer'
 
@@ -16,7 +15,6 @@ export default function Home() {
                 <div className="space-y-10">
                     <HeroSection/>
                     <About/>
-                    <Education/>
                     <Projects/>
                     <Footer/>
                 </div>
