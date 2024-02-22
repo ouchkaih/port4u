@@ -25,13 +25,13 @@ function ProjectList({project}) {
             </span>
           </div>
           <div>
-            <text className="text-base opacity-60 ">
+            <p className="text-base opacity-60 ">
               { project.description?.length > 100 ?  project.description.slice(0, 100) + '...' :  project.description }
-            </text>
+            </p>
           </div>
           <div className="text-md opacity-80 flex flex-wrap gap-4 text-sm " >
-            { project.skills.map(skill=>(
-              <span>
+            { project.skills.map((skill, ind)=>(
+              <span key={ind}>
                 .{skill}
               </span>
             ))}
