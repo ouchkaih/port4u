@@ -1,4 +1,4 @@
 [build]
 
   # Directory to change to before starting build commands and to publish as deploy output
-  publish = "https://github.com/ouchkaih/port4u/build"
+  publish = "/build"
