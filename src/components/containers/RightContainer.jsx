@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useScrollAnimationR } from "./useScrollAnimationR";
 
-function RightContainer({ children, img , number, title}) {
+function RightContainer({ children, imgComp , number, title}) {
     const isVisible = useScrollAnimationR();
 
   return (
     <div className="grid grid-cols-2 px-1 py-8">
-      <div className="">{img}</div>
+      {imgComp}
       <div className="">
         <motion.div
           initial={{ x: isVisible ? 0 : 400 }} // Initially off-screen to the left if isVisible is false
