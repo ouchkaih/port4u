@@ -1,4 +1,5 @@
 [build]
 
   # Directory to change to before starting build commands and to publish as deploy output
-  publish = "/build"
+  command = "npm run build"
+  publish = "build"
