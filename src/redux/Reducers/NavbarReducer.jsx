@@ -5,13 +5,13 @@ const initialState = {
     navItems : [ 
         {
             name: 'home',
-            href: '/',
+            id: 'home',
         },{
             name: 'about',
-            href: '/about-me',
+            id: 'about',
         },{
             name: 'projects',
-            href: '/projects',
+            id: 'projects',
         }
     ]
 }

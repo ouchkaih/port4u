@@ -7,11 +7,11 @@ import BuyMeCoffee from "./icons/BuyMeCoffe";
 import { setTheme } from "../redux/Reducers/ThemeReducer";
 // import {DarkModeToggle} from 'darkmode-toggle-react'
 
-export default function NavBar() {
+export default function NavBar({aboutRef , homeRef, projectsRef}) {
     const [navbar, setNavbar] = useState(false);
-    const location = useLocation();
-    const { pathname} = location;
+    const [pathname, setPathname] = useState('home');
     const dispatch = useDispatch()
+    const [scrollY, setScrollY] = useState(window.scrollY)
 
     const [theme , setThemeActive ] = useState( localStorage.getItem('theme') ? localStorage.getItem('theme') : 'light');
 
@@ -24,13 +24,44 @@ export default function NavBar() {
     const [items , setItems] = useState(useSelector((state)=> state.navBar.navItems))
 
 
-    const ChangeActiveLink = ()=>{
-        // e.preventDefault()
-        console.log(pathname)
+    const ChangeActiveLink = (path)=>{
+        setPathname(path)
     }
 
+    useEffect(() => {
+        const handleScroll = event => {
+          if(window.scrollY > 0 && window.scrollY <300){
+            setPathname('home')
+            ChangeActiveLink('home')
+          }else if(window.scrollY > 300 && window.scrollY < 800){
+            setPathname('about')
+            ChangeActiveLink('about')
+          }else if(window.scrollY > 800){
+            setPathname('projects')
+            ChangeActiveLink('projects')
+          }
+        };
+    
+        window.addEventListener('scroll', handleScroll);
+    
+        return () => {
+          window.removeEventListener('scroll', handleScroll);
+        };
+      }, []);
+
+
+    const scrollToSection = (ref, path) => {
+        const offsetTop = ref.current.offsetTop;
+        window.scrollTo({
+            top: offsetTop - 60, // Adjust 60px to match the height of your NavBar
+            behavior: 'smooth',
+        });
+
+        ChangeActiveLink(path)
+    };
+
     return (
-        <nav className="w-full bg-[#FDFAF6] dark:bg-[#0A192F] dark:text-[#5AE5C6] text-[#0A192F] py-3 block relative z-50">
+        <nav className="w-full fixed backdrop-blur-2xl supports-backdrop-blur:bg-white/60 dark:bg-transparent bg-blend-lighten hover:bg-blend-darken top-0 bg-[#FDFAF6] dark:bg-[#0A192F] dark:text-[#5AE5C6] text-[#0A192F] py-3 block z-50">
             <div className="justify-between px-4 md:items-center md:flex md:px-10">
                 <div >
                     <div className="flex items-center justify-between py-3 md:py-5 md:block">
@@ -79,18 +110,20 @@ export default function NavBar() {
                         </div>
                     </div>
                 </div>
-                <div className="absolute w-full md:w-full flex justify-center md:block bg-[#FDFAF6] dark:bg-[#0A192F] md:relative left-0">
+                <div className="
+                 backdrop-blur-2xl supports-backdrop-blur:bg-white/60 dark:bg-transparent bg-blend-lighten hover:bg-blend-darken 
+                relative w-full md:w-full flex justify-center md:block bg-[#FDFAF6] dark:bg-[#0A192F] md:relative left-0 ">
                     <div
-                        className={`justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 flex ${
+                        className={`justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 flex pl-7 md:pl-20 ${
                             navbar ? "block" : "hidden"
                         }`}
                     >
-                        <ul className="items-center text-sm justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
+                        <ul className="items-center text-sm justify-center space-y-8 md:flex md:space-x-10 md:space-y-0">
                             {
                                 items?.map((item, index)=>(
-                                    <li key={index} className={`${ item.href === pathname ? 'text-[#0A192F] font-bold dark:text-[#5AE5C6]' : ' text-[#0A192F] dark:text-[#CCD6F6] opacity-80 dark:opacity-100'} hover:text-[#0A192F] text-center  hover:font-bold hover:opacity-100 dark:hover:text-[#5AE5C6] `}>
+                                    <li key={index} className={`${ item.id === pathname ? 'text-[#0A192F] font-bold dark:text-[#5AE5C6]' : ' text-[#0A192F] dark:text-[#CCD6F6] opacity-80 dark:opacity-100'} hover:text-[#0A192F] text-center hover:font-bold hover:opacity-100 dark:hover:text-[#5AE5C6] cursor-pointer `}>
                                         <span className="text-[#0A192F] font-bold dark:text-[#5AE5C6] mr-2 text-sm">{index+1}.</span>
-                                        <Link to={item.href} onClick={()=> ChangeActiveLink} className="capitalize">{item.name}</Link>
+                                        <button to="#" onClick={() => scrollToSection(eval(item.id + 'Ref'), item.id)} className="capitalize">{item.name}</button>
                                     </li>
                                 ))
                             }

@@ -10,8 +10,8 @@ function SocialMedia() {
         <div className="fixed left-0 px-5 bottom-0 mx-auto lg:max-w-7xl justify-center flex-col items-center">
           <div>
             {
-              socials.map((icon)=>(
-                <Link to={icon.path} className='opacity-70 dark:opacity-100 flex justify-center m-5 mx-0 md:mx-3 dark:text-[#8892b0] dark:hover:text-[#5AE5C6] hover:text-[#0A192F] hover:opacity-100' aria-label={icon.name} title={icon.name}>{icon.icon} </Link>
+              socials.map((icon, index)=>(
+                <Link key={index} to={icon.path} className='opacity-70 dark:opacity-100 flex justify-center m-5 mx-0 md:mx-3 dark:text-[#8892b0] dark:hover:text-[#5AE5C6] hover:text-[#0A192F] hover:opacity-100' aria-label={icon.name} title={icon.name}>{icon.icon} </Link>
               ))
             }
           </div>

@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { motion } from "framer-motion";
 
 
-function HeroSection() {    
+function HeroSection({homeRef}) {    
 
   const theme = useSelector((state)=> state.theme.theme);
   const [myBg , setMyBg] = useState(theme)
@@ -15,7 +15,7 @@ function HeroSection() {
 
 
   return (
-    <div className="w-full flex items-center">
+    <div className="w-full flex items-center"  id="home" ref={homeRef}>
         <div className='
             justify-between lg:max-w-7xl md:items-center md:flex w-full
             '>
