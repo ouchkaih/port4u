@@ -61,7 +61,7 @@ export default function NavBar({aboutRef , homeRef, projectsRef}) {
     };
 
     return (
-        <nav className="w-full fixed backdrop-blur-2xl supports-backdrop-blur:bg-white/60 dark:bg-transparent bg-blend-lighten hover:bg-blend-darken top-0 bg-[#FDFAF6] dark:bg-[#0A192F] dark:text-[#5AE5C6] text-[#0A192F] py-3 block z-50">
+        <nav className="w-full relative md:fixed backdrop-blur-2xl supports-backdrop-blur:bg-white/60 dark:bg-transparent bg-blend-lighten hover:bg-blend-darken top-0 bg-[#FDFAF6] dark:bg-[#0A192F] dark:text-[#5AE5C6] text-[#0A192F] py-3 block z-50">
             <div className="justify-between px-4 md:items-center md:flex md:px-10">
                 <div >
                     <div className="flex items-center justify-between py-3 md:py-5 md:block">

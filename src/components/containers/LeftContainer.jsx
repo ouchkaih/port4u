@@ -7,7 +7,7 @@ function LeftContainer({ children, img }) {
 
   return (
     
-      <div className="grid grid-cols-2 px-1 py-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 px-1 py-8">
         <div className="">
             <motion.div 
                 initial={{ x: isVisible ? 0 : 0 }} // Initially off-screen to the left if isVisible is false
@@ -16,7 +16,7 @@ function LeftContainer({ children, img }) {
                 className={ !isVisible ? 'opacity-100' : 'opacity-0'}
 
             >
-                <h3 className="capitalize text-2xl mb-3 dark:text-[#CCD6F6] font-semibold">
+                <h3 className="capitalize text-2xl mb-3 dark:text-[#CCD6F6] font-semibold text-center md:text-left">
                     <span className="text-[#0A192F] font-bold dark:text-[#5AE5C6] text-base ">
                     2.
                     </span> 

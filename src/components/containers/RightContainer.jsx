@@ -6,7 +6,7 @@ function RightContainer({ children, imgComp , number, title}) {
     const isVisible = useScrollAnimationR();
 
   return (
-    <div className="grid grid-cols-2 px-1 py-8">
+    <div className="grid grid-cols-1 md:grid-cols-2 px-1 py-8">
       {imgComp}
       <div className="">
         <motion.div
@@ -15,7 +15,7 @@ function RightContainer({ children, imgComp , number, title}) {
           transition={{ duration: 1 }} // Transition duration
             className={ !isVisible ? 'opacity-100' : 'opacity-0'}
         >
-          <h3 className="capitalize text-2xl text-[] mb-3 dark:text-[#CCD6F6] font-semibold"><span className="text-[#0A192F] font-bold dark:text-[#5AE5C6] text-base ">{ number}. </span> {title}</h3>
+          <h3 className="capitalize text-center md:text-left pt-10 md:pt-0 text-2xl text-[] mb-3 dark:text-[#CCD6F6] font-semibold"><span className="text-[#0A192F] font-bold dark:text-[#5AE5C6] text-base ">{ number}. </span> {title}</h3>
         </motion.div>
         <motion.div
           initial={{ x: isVisible ? 0 : 1000 }} // Initially off-screen to the left if isVisible is false

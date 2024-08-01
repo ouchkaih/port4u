@@ -25,5 +25,5 @@ export function useScrollAnimationR() {
     };
   }, []);
 
-  return isVisible;
+  return isVisible && ( window.innerWidth >= 768 && window.innerWidth < 2550);
 }

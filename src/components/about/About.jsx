@@ -25,7 +25,7 @@ function About({aboutRef}) {
           </div>
         )}
       >
-        <div className="">
+        <div className="text-center md:text-left">
           <span className=''>
             &nbsp;&nbsp;&nbsp; {about}
           </span>
